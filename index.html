@@ -918,7 +918,7 @@
 <!-- Main Interactive Application Logic -->
 <script>
   // Public app version. Bump this value whenever the published app changes.
-  const AESTHETIC_HAUS_VERSION = '1.1.0';
+  const AESTHETIC_HAUS_VERSION = '1.2.1';
 
   // 1. STATE MANAGEMENT
   let sessionSeconds = 0;
@@ -1729,17 +1729,25 @@
       updateButton.textContent = 'Actualizando…';
     }
 
-    // If a newer service worker is waiting, activate it first.
-    const controller = navigator.serviceWorker.controller;
-    if (controller) controller.postMessage({ type: 'SKIP_WAITING' });
+    // A waiting worker must receive SKIP_WAITING itself. Sending the
+    // message to the current controller does not activate the new worker.
+    navigator.serviceWorker.getRegistration('./').then(function (registration) {
+      const waiting = registration && registration.waiting;
+      if (waiting) {
+        waiting.postMessage({ type: 'SKIP_WAITING' });
+      } else {
+        // Ask the registration to look for a newer worker, then reload.
+        if (registration) registration.update().catch(function () {});
+      }
+    }).catch(function () {});
 
-    // The version query makes the next navigation a fresh request even when
-    // the browser has an older document cached.
+    // If no waiting worker exists, the cache-busting navigation still gets
+    // the freshly published document once GitHub Pages has deployed it.
     setTimeout(function () {
       const target = new URL(window.location.href);
       target.searchParams.set('app_update', remoteVersion || String(Date.now()));
       window.location.replace(target.toString());
-    }, 350);
+    }, 800);
   }
 
   if (updateButton) updateButton.addEventListener('click', reloadForUpdate);
