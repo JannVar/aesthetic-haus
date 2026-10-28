@@ -143,8 +143,27 @@ En esta versión se corrigió el sistema de actualización para conservar correc
 
 ## 📸 Capturas de pantalla
 
-Las capturas de la interfaz se añadirán próximamente para mostrar el funcionamiento de la aplicación en ordenadores y dispositivos móviles.
+### Pantalla principal
 
+![Pantalla principal de Aesthetic-Haus](screenshots/pantalla-principal.png)
+
+### Gestión de entrenamientos
+
+![Gestión de entrenamientos](screenshots/entrenamientos.png)
+
+### Curva de entrenamiento
+
+![Curva de progreso del entrenamiento](screenshots/curva-entrenamiento.png)
+
+### Personalización
+
+![Opciones de personalización](screenshots/personalizacion.png)
+
+### Otras funciones
+
+![Funciones adicionales de Aesthetic-Haus](screenshots/extra-funcionamiento-app-1.png)
+
+![Más funciones de Aesthetic-Haus](screenshots/extra-funcionamiento-app-2.png)
 ## 🚧 Estado del proyecto
 
 El proyecto se encuentra en desarrollo activo.
