@@ -1,178 +1,187 @@
-# Aesthetic-Haus
+# 🏋️ Aesthetic-Haus
 
-> Progressive Web App (PWA) para registrar, organizar y consultar entrenamientos de fuerza.
+Aesthetic-Haus es una aplicación web para la planificación, personalización y seguimiento de entrenamientos.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-222?style=for-the-badge&logo=github)](#-demo)
-[![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge)](#-pwa)
-[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)](#-tecnologías)
+El proyecto ha sido desarrollado durante mi formación en 2.º de Desarrollo de Aplicaciones Multiplataforma (DAM), aplicando conocimientos de desarrollo web, almacenamiento local, aplicaciones PWA y publicación mediante GitHub Pages.
 
-## 📌 Sobre el proyecto
+## 🌐 Aplicación publicada
 
-**Aesthetic-Haus** es una aplicación web orientada al seguimiento de entrenamientos de fuerza.
+Puedes acceder a la aplicación desde GitHub Pages:
 
-El proyecto nació con un objetivo práctico: disponer de una herramienta sencilla para registrar entrenamientos y consultar el progreso desde el móvil, manteniendo la información del usuario incluso después de cerrar la aplicación.
-
-Además de resolver el problema funcional, el proyecto está planteado como un ejercicio de desarrollo y aprendizaje dentro de **2º DAM**, aplicando conceptos de desarrollo web, persistencia de datos, PWA y control de versiones.
+**https://jannvar.github.io/aesthetic-haus/**
 
 ## ✨ Funcionalidades
 
-- 👤 Perfil personalizable.
-- 🏋️ Registro de ejercicios y series.
-- ⚖️ Peso, repeticiones y RPE.
-- 📊 Seguimiento del volumen/tonelaje registrado.
-- ⏱️ Temporizador y control de la sesión.
-- 🎨 Personalización visual.
-- 🖼️ Avatar/perfil.
-- 💾 Persistencia local de los datos.
-- 📱 Diseño adaptado a móvil.
-- 📲 Instalación como aplicación desde Safari en iPhone.
-- 📴 Funcionamiento offline después de cargar la aplicación.
-- 🔄 Sistema preparado para detectar nuevas versiones.
-- 👥 Cada dispositivo mantiene su propio perfil y sus propios entrenamientos.
+- Creación y personalización del perfil del usuario.
+- Gestión y seguimiento de entrenamientos.
+- Conservación de la sesión al cerrar la aplicación.
+- Almacenamiento local de la información.
+- Diseño adaptable a distintos tamaños de pantalla.
+- Funcionamiento como aplicación web instalable.
+- Detección automática de nuevas versiones.
+- Aviso cuando existe una actualización disponible.
+- Actualización de la aplicación sin eliminar los datos guardados.
+- Funcionamiento sin conexión para los recursos almacenados en caché.
 
-## 📱 PWA
+## 🛠️ Tecnologías utilizadas
 
-Aesthetic-Haus está preparada como **Progressive Web App**.
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
+- Service Worker
+- Web App Manifest
+- Progressive Web App (PWA)
+- Git
+- GitHub
+- GitHub Pages
 
-Desde Safari en iPhone se puede utilizar:
+## 📲 Instalación de la aplicación
 
-**Compartir → Añadir a pantalla de inicio → Abrir como app web**
+Aesthetic-Haus puede utilizarse directamente desde el navegador o instalarse como una aplicación PWA.
 
-La aplicación utiliza un `manifest.webmanifest` y un Service Worker para proporcionar una experiencia más cercana a una aplicación instalada.
+### En ordenador
 
-## 💾 Persistencia de datos
+1. Abre la aplicación desde Google Chrome o Microsoft Edge.
+2. Pulsa el icono de instalación que aparece en la barra de direcciones.
+3. Confirma la instalación.
+4. La aplicación aparecerá como un programa independiente.
 
-El proyecto utiliza almacenamiento local del navegador:
+### En Android
 
-- **LocalStorage** como almacenamiento principal.
-- **IndexedDB** como respaldo.
-- Guardado automático de los datos relevantes.
-- Recuperación del estado al volver a abrir la aplicación.
+1. Abre la aplicación desde Google Chrome.
+2. Pulsa el menú de los tres puntos.
+3. Selecciona **Instalar aplicación** o **Añadir a pantalla de inicio**.
+4. Confirma la instalación.
 
-Los datos personales y de entrenamiento se mantienen localmente en el dispositivo. Por ello, dos personas pueden utilizar la misma aplicación publicada y mantener perfiles independientes en sus respectivos dispositivos.
+### En iPhone o iPad
 
-> **Nota:** al ser almacenamiento local, los datos no se sincronizan automáticamente entre dispositivos.
+1. Abre la aplicación desde Safari.
+2. Pulsa el botón **Compartir**.
+3. Selecciona **Añadir a pantalla de inicio**.
+4. Confirma la instalación.
 
-## 🔄 Sistema de actualizaciones
+## 💾 Almacenamiento de datos
 
-La PWA incorpora un sistema de versiones para evitar que una caché antigua impida recibir cambios publicados.
+La aplicación utiliza el almacenamiento local del navegador para conservar la información del usuario.
 
-El flujo previsto es:
+Los datos permanecen guardados cuando:
 
-```text
-Nueva versión
-     ↓
-Publicación en GitHub Pages
-     ↓
-La aplicación detecta la actualización
-     ↓
-El usuario actualiza
-     ↓
-Se descarga la nueva versión
-     ↓
-Los datos locales se mantienen
+- Se cierra y se vuelve a abrir la aplicación.
+- Se recarga la página.
+- Se instala una versión nueva.
+- Se actualiza la aplicación desde el aviso correspondiente.
+- Se modifican los archivos publicados en GitHub Pages.
+
+Los datos podrían perderse si el usuario elimina manualmente los datos del sitio, borra el almacenamiento del navegador o desinstala la aplicación eliminando también sus datos.
+
+## 🔄 Sistema de actualización
+
+Aesthetic-Haus comprueba si existe una versión más reciente mediante el archivo `version.json`.
+
+El proceso de actualización es el siguiente:
+
+1. Se modifica el código del proyecto.
+2. Se incrementa el número de versión.
+3. Los cambios se suben a GitHub.
+4. GitHub Pages publica la nueva versión.
+5. Aesthetic-Haus detecta la actualización.
+6. La aplicación muestra un aviso al usuario.
+7. El usuario pulsa el botón de actualización.
+8. Se cargan los nuevos archivos de la aplicación.
+9. La sesión, la personalización y los entrenamientos permanecen guardados.
+
+## 🚀 Ejecución local
+
+Para ejecutar el proyecto en un ordenador:
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/JannVar/aesthetic-haus.git
 ```
 
-## 🛠️ Tecnologías
+2. Entra en la carpeta del proyecto:
 
-| Tecnología | Uso |
-|---|---|
-| HTML5 | Estructura de la aplicación |
-| CSS3 | Diseño, responsive y temas |
-| JavaScript | Lógica e interacción |
-| LocalStorage | Persistencia rápida |
-| IndexedDB | Persistencia de respaldo |
-| Service Worker | Caché y funcionamiento offline |
-| Web App Manifest | Instalación como PWA |
-| Git | Control de versiones |
-| GitHub | Repositorio y colaboración |
-| GitHub Pages | Publicación de la aplicación |
+```bash
+cd aesthetic-haus
+```
 
-## 🧠 Decisiones técnicas
+3. Abre la carpeta con Visual Studio Code.
 
-### Persistencia local
+4. Ejecuta el proyecto mediante un servidor local. Por ejemplo, puedes utilizar la extensión **Live Server** de Visual Studio Code.
 
-Se optó por almacenamiento local porque la aplicación puede funcionar sin una cuenta de usuario ni un servidor para las funciones básicas.
+> No se recomienda abrir `index.html` directamente mediante `file://`, porque el Service Worker y otras funciones de la aplicación necesitan ejecutarse desde HTTP o HTTPS.
 
-Esto permite mantener la aplicación sencilla y, al mismo tiempo, conservar los entrenamientos después de cerrar el navegador.
-
-### PWA
-
-La aplicación está orientada principalmente al uso móvil, por lo que una PWA permite acceder rápidamente desde la pantalla de inicio sin desarrollar una aplicación nativa específica para iOS y Android.
-
-### Offline-first
-
-El Service Worker permite almacenar los recursos necesarios para que la aplicación pueda seguir utilizándose cuando no haya conexión, una vez que los recursos hayan sido cargados previamente.
-
-## 📂 Estructura
+## 📁 Estructura del proyecto
 
 ```text
 aesthetic-haus/
+├── icons/
 ├── index.html
 ├── manifest.webmanifest
 ├── sw.js
-├── icons/
-│   ├── icon-192.png
-│   └── icon-512.png
+├── version.json
 ├── README.md
 └── LICENSE
 ```
 
-## 🚀 Publicar con GitHub Pages
+### Archivos principales
 
-1. Crear un repositorio llamado `aesthetic-haus`.
-2. Subir los archivos del proyecto a la raíz del repositorio.
-3. Ir a **Settings → Pages**.
-4. Seleccionar la rama `main` y la carpeta `/ (root)`.
-5. Guardar la configuración.
-6. GitHub Pages generará la URL pública del proyecto.
+- `index.html`: contiene la estructura, los estilos y la lógica principal de la aplicación.
+- `manifest.webmanifest`: configura la aplicación como PWA.
+- `sw.js`: gestiona la caché y la actualización de los recursos.
+- `version.json`: indica la versión publicada y permite detectar actualizaciones.
+- `icons/`: contiene los iconos utilizados por la aplicación.
+- `LICENSE`: incluye la licencia del proyecto.
 
-Ejemplo:
+## 📌 Versión actual
 
-```text
-https://TU-USUARIO.github.io/aesthetic-haus/
-```
+La versión estable actual es la **1.2.1**.
 
-## 🧪 Cómo ejecutar localmente
+En esta versión se corrigió el sistema de actualización para conservar correctamente la sesión, la personalización y los entrenamientos almacenados.
 
-Para desarrollo, los archivos pueden servirse mediante un servidor HTTP local.
+## 📸 Capturas de pantalla
 
-Por ejemplo, con VS Code y una extensión como Live Server.
+### Pantalla principal
 
-> Para probar correctamente las características PWA/Service Worker, es preferible utilizar `http://localhost` o una URL HTTPS en lugar de abrir directamente `index.html` con `file://`.
+![Pantalla principal de Aesthetic-Haus](screenshots/pantalla-principal.png)
 
-## 🔮 Próximas mejoras
+### Gestión de entrenamientos
 
-Algunas posibles evoluciones del proyecto:
+![Gestión de entrenamientos](screenshots/entrenamientos.png)
 
-- [ ] Historial avanzado de entrenamientos.
-- [ ] Gráficas de progresión.
-- [ ] Exportación e importación de datos.
-- [ ] Gestión de rutinas.
-- [ ] Sistema de objetivos.
-- [ ] Backend y API REST.
-- [ ] Autenticación de usuarios.
-- [ ] Sincronización entre dispositivos.
-- [ ] Base de datos remota.
-- [ ] Tests automatizados.
-- [ ] Arquitectura frontend/backend más modular.
+### Curva de entrenamiento
 
-## 🎓 Contexto académico
+![Curva de progreso del entrenamiento](screenshots/curva-entrenamiento.png)
 
-Proyecto desarrollado como parte del aprendizaje de **2º de Desarrollo de Aplicaciones Multiplataforma (DAM)**.
+### Personalización
 
-El objetivo no es únicamente crear una interfaz, sino aplicar conceptos de desarrollo de software a un proyecto funcional que pueda evolucionar progresivamente.
+![Opciones de personalización](screenshots/personalizacion.png)
 
-## 👨‍💻 Autor
+### Otras funciones
+
+![Funciones adicionales de Aesthetic-Haus](screenshots/extra-funcionamiento-app-1.png)
+
+![Más funciones de Aesthetic-Haus](screenshots/extra-funcionamiento-app-2.png)
+## 🚧 Estado del proyecto
+
+El proyecto se encuentra en desarrollo activo.
+
+Las funciones principales están operativas y el sistema de actualización conserva correctamente la información almacenada localmente.
+
+## 🔒 Privacidad
+
+La información del usuario se almacena localmente en su dispositivo. La aplicación no necesita enviar los entrenamientos ni la personalización a un servidor externo para conservarlos.
+
+## 👤 Autor
 
 **Alejandro Mosquete Mendoza**
 
-Estudiante de **2º DAM**.
+Estudiante de 2.º de Desarrollo de Aplicaciones Multiplataforma.
 
-Este repositorio forma parte de mi portfolio personal y documenta la evolución de uno de mis proyectos prácticos.
+- GitHub: https://github.com/JannVar
 
----
+## 📄 Licencia
 
-### 📄 Licencia
-
-Este proyecto se distribuye bajo la licencia incluida en `LICENSE`.
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo LICENSE para obtener más información.
